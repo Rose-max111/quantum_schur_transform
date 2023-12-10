@@ -25,7 +25,6 @@ def CG_Coef(j1, j2):
     assume j1 >= j2
     维度: 
     (2j1+1)*(2j2+1) = [ 2(j1 - j2) +1 ] + [ 2(j1-j2+1) + 1] + ... + [ 2(j1 + j2) +1 ]
-    精度原因 j1 j2都在真实值上乘了2
 
     认为 (j1, s1) tensor (j2, s2) 占据的列向量下标是 s1 * (2j2+1) + s2
     '''
@@ -82,6 +81,5 @@ def CG_Coef(j1, j2):
 
 if __name__ == "__main__":
     n = 2
-    mat = CG_Coef(2, 1)
-    print(np.sqrt(2/3))
-    print(mat.round(decimals=2))
+    mat = CG_Coef(3, 1)
+    print(mat[J_pos(2, 1, 1)][vec_pos(3/2, 1/2, 3/2, -1/2)])
