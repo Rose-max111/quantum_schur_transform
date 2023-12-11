@@ -34,7 +34,7 @@ def CG_Coef(j1, j2):
 
     row = 0
 
-    for J in uni_array(j1 + j2, j1 - j2, -1):
+    for J in uni_array(j1 + j2, np.abs(j1 - j2), -1):
         # 单独计算每个J的最大的M所对应的变换系数
         if (J == (j1 + j2)):
             mat[0][vec_pos(j1, j2, j1, j2)] = 1
@@ -79,6 +79,5 @@ def CG_Coef(j1, j2):
 
 
 if __name__ == "__main__":
-    n = 2
-    mat = CG_Coef(5/2, 3/2)
+    mat = CG_Coef(1, 1/2)
     print(mat.round(decimals=2))

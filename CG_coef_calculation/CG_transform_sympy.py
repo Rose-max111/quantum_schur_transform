@@ -28,7 +28,7 @@ def is_numeric_string(s):
     return (s[0] == '-' and s[1:].isdigit()) or s.isdigit()
 
 
-def CGtrans(j1, j2):
+def CG_coef(j1, j2):
 
     mat = np.zeros([(int)(2 * j1 + 1) * (int)(2 * j2 + 1),
                    (int)(2 * j1 + 1) * (int)(2 * j2 + 1)])
@@ -47,5 +47,5 @@ def CGtrans(j1, j2):
 
 
 if __name__ == "__main__":
-    mat = CGtrans(5/2, 3/2)
+    mat = CG_coef(5/2, 3/2)
     print(mat.round(decimals=2))
