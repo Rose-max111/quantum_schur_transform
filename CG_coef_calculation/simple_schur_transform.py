@@ -28,10 +28,9 @@ def CG_Coef(j1, j2):
 
     认为 (j1, s1) tensor (j2, s2) 占据的列向量下标是 s1 * (2j2+1) + s2
     '''
-    mat = np.zeros([(j1+1)*(j2+1), (j1+1)*(j2+1)])
 
-    j1 = j1 / 2
-    j2 = j2 / 2
+    mat = np.zeros([(int)(2 * j1 + 1) * (int)(2 * j2 + 1),
+                   (int)(2 * j1 + 1) * (int)(2 * j2 + 1)])
 
     row = 0
 
@@ -81,5 +80,5 @@ def CG_Coef(j1, j2):
 
 if __name__ == "__main__":
     n = 2
-    mat = CG_Coef(3, 1)
-    print(mat[J_pos(2, 1, 1)][vec_pos(3/2, 1/2, 3/2, -1/2)])
+    mat = CG_Coef(5/2, 3/2)
+    print(mat.round(decimals=2))
